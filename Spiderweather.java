@@ -8,6 +8,16 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.util.ArrayList;
+package team_12;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.Date;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import java.util.ArrayList;
 
 public class Spiderweather{
     private ArrayList<String> weather=new ArrayList<>(3);
@@ -50,12 +60,11 @@ public class Spiderweather{
         Date date = new Date();
         String time=date.toString();
         System.out.println(time);
-        float tmp;
 
         diver.get(url);
         Document doc=Jsoup.parse(diver.getPageSource(),"utf-8");
         //System.out.println(doc);total web
-
+        diver.quit();
         Elements place=doc.select("tbody[id=stations]");//整個表格
         Elements trs=place.select("tr");
         for(Element tr:trs)
@@ -86,12 +95,11 @@ public class Spiderweather{
             }
         }
 
-        diver.quit();
+
     }
     public ArrayList<String> getWeather()
     {
         return weather;
     }
 }
-
 
