@@ -93,11 +93,13 @@ public class MyFrame extends JFrame {
 			}else{
 				//點選雲產生天氣介面
 
-				System.out.printf("%s%n",event.getSource());
-				WeatherFrame wf = new WeatherFrame();
-				wf.setVisible(true);
-				wf.setLocationRelativeTo(null);
-				wf.setSize(400, 200);
+                		label3.setText("更新中...");
+                		System.out.printf("%s%n", event.getSource());
+               			WeatherFrame wf = new WeatherFrame(label3);
+                		wf.setVisible(true);
+                		wf.setLocationRelativeTo(null);
+                		wf.setSize(400, 200);
+
 			
 			}
 		}
