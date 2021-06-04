@@ -15,13 +15,16 @@ public class WeatherFrame extends JFrame{
     private JPanel otherp;
     private JPanel anotherp;
     private JLabel showbroad;
+    private JLabel resultJLabel;
+    private String newText="更新中";
     private final JComboBox<String> cityComboBox;
     private static final String[] city =
             {"基隆市", "臺北市", "新北市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","彰化縣","南投縣"
                     ,"雲林縣","嘉義市","嘉義縣","臺南市","高雄市","屏東縣","宜蘭縣","花蓮縣","臺東縣","澎湖縣","金門縣","連江縣"};
     private ArrayList<String> weather_list;
     //設定天氣介面
-    public WeatherFrame(){
+    public WeatherFrame(JLabel label3){
+
         super("今日氣溫");
         setLayout(new GridLayout(4,1,5,5));
 
@@ -44,17 +47,20 @@ public class WeatherFrame extends JFrame{
 
         WeatherHandler weatherHandler  = new WeatherHandler();
         goSearch.addActionListener(weatherHandler);
+        this.resultJLabel=label3;
 
     }
+
     //設定視窗資訊
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         WeatherFrame wFrame = new WeatherFrame();
         wFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         wFrame.setSize(400, 200); // set frame size
         wFrame.setVisible(true);
-    }
+    }*/
 
     private class WeatherHandler implements ActionListener{
+
         //如按下查詢按鈕，去取的使用者輸入在location地區在去查詢
         @Override
         public void actionPerformed(ActionEvent event){
@@ -68,7 +74,13 @@ public class WeatherFrame extends JFrame{
                 TMP[len] = i;
                 len++;
             }
-            String newText="更新時間: "+TMP[0]+" 溫度: "+TMP[1]+" 天氣: "+TMP[2];
+
+            //set label
+            String text="溫度:"+TMP[1]+"度 天氣:"+TMP[2];
+            resultJLabel.setText(text);
+
+            //set this frame
+            newText="溫度:"+TMP[1]+"度 天氣:"+TMP[2]+" 更新時間:"+TMP[0];
             anotherp=new JPanel();
             showbroad=new JLabel(newText);
             showbroad.setFont(new Font("Serif", Font.BOLD, 15));
@@ -76,10 +88,5 @@ public class WeatherFrame extends JFrame{
             add(anotherp);
             revalidate();
         }
-
-    }
-
-    public JLabel getShowbroad() {
-        return showbroad;
     }
 }
