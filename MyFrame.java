@@ -1,23 +1,9 @@
 package team_12;
 
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.Icon;
-import javax.swing.SwingConstants;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Font;
+import java.awt.event.MouseEvent;
 
 //主要介面
 public class MyFrame extends JFrame {
