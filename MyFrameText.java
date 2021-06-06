@@ -2,7 +2,6 @@ package team_12;
 
 import javax.swing.JFrame;
 import java.awt.Color;
-import java.awt.EventQueue;
 
 //產生主介面
 public class MyFrameText {
@@ -16,4 +15,3 @@ public class MyFrameText {
 	
 	}
 } // end class public class MyFrameText
-
