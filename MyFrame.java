@@ -88,7 +88,7 @@ public class MyFrame extends JFrame {
 				ClothesFrame clf = new ClothesFrame();
 				clf.setVisible(true);
 				clf.setLocationRelativeTo(null);
-				clf.setSize(500, 500);
+				clf.setSize(300, 550);
 			
 			}else{
 				//點選雲產生天氣介面
