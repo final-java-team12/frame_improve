@@ -22,6 +22,7 @@ public class WeatherFrame extends JFrame{
             {"基隆市", "臺北市", "新北市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","彰化縣","南投縣"
                     ,"雲林縣","嘉義市","嘉義縣","臺南市","高雄市","屏東縣","宜蘭縣","花蓮縣","臺東縣","澎湖縣","金門縣","連江縣"};
     private ArrayList<String> weather_list;
+    public static double temperature;
     //設定天氣介面
     public WeatherFrame(JLabel label3){
 
@@ -78,7 +79,7 @@ public class WeatherFrame extends JFrame{
             //set label
             String text="溫度:"+TMP[1]+"度 天氣:"+TMP[2];
             resultJLabel.setText(text);
-
+            temperature=Double.parseDouble(TMP[1]);
             //set this frame
             newText="溫度:"+TMP[1]+"度 天氣:"+TMP[2]+" 更新時間:"+TMP[0];
             anotherp=new JPanel();
