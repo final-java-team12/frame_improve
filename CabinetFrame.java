@@ -1,14 +1,8 @@
 package team_12;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import java.awt.Font;
 
 //點選衣櫃時產生的介面
 public class CabinetFrame extends JFrame{
