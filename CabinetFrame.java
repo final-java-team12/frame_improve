@@ -62,12 +62,12 @@ public class CabinetFrame extends JFrame{
     }
 
     //設定視窗資訊
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         CabinetFrame cFrame = new CabinetFrame();
 		cFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		cFrame.setSize(300, 200); // set frame size
 		cFrame.setVisible(true); 
-    }
+    }*/
 
     private class Handler implements ActionListener{
         //匯入上衣(up)和褲子(down)

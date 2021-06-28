@@ -1,15 +1,33 @@
 package team_12;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class shortSleeve { //短袖
 
     private List<Path> data = new ArrayList<Path>();
     public void setShortSleeve(Path fileName)
     {
-        data.add(fileName);
+        if(Files.isDirectory(fileName))
+        {
+            try{
+            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(fileName);
+
+            for (Path p : directoryStream)
+                data.add(p);
+            }
+            catch (IOException E)
+            {
+                System.out.println("讀取錯誤");
+            }
+        }
+        else{
+            data.add(fileName);
+        }
         printshortSleeve();
     }
 

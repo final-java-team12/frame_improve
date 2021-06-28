@@ -11,8 +11,9 @@ public class ClothesFrame extends JFrame{
     private WeatherFrame weather;
     private JLabel labelShirt;
     private JLabel labelPant;
+
     //設定置物籃介面
-    public ClothesFrame(double temperature){
+    public ClothesFrame(){
         super("今日合適搭配~");
         setLayout(new GridLayout(2,1));
         labelShirt = new JLabel();

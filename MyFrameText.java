@@ -15,3 +15,4 @@ public class MyFrameText {
 	
 	}
 } // end class public class MyFrameText
+

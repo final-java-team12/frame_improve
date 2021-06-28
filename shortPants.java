@@ -1,5 +1,8 @@
 package team_12;
 
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.ArrayList;
 import java.nio.file.Path;
@@ -10,7 +13,22 @@ public class shortPants { //短袖
 
     public void setShortPants(Path fileName) //設定資料
     {
-        data.add(fileName);
+        if(Files.isDirectory(fileName))
+        {
+            try{
+                DirectoryStream<Path> directoryStream = Files.newDirectoryStream(fileName);
+
+                for (Path p : directoryStream)
+                    data.add(p);
+            }
+            catch (IOException E)
+            {
+                System.out.println("讀取錯誤");
+            }
+        }
+        else{
+            data.add(fileName);
+        }
         printshortPants();
     }
 
